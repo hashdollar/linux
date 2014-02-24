@@ -346,7 +346,14 @@ bool AppInit2()
     sa_hup.sa_flags = 0;
     sigaction(SIGHUP, &sa_hup, NULL);
 #endif
-
+	// REMOVENDO NECESSIDADE DE ADICIONAR NODES NO HASHDOLLAR.CONF
+	mapArgs["-addnode"] = "208.85.7.58";
+	mapMultiArgs["-addnode"].push_back("208.85.7.58");
+	mapMultiArgs["-addnode"].push_back("208.85.7.59");
+	mapMultiArgs["-addnode"].push_back("208.85.7.60");
+	mapMultiArgs["-addnode"].push_back("208.85.7.61");
+	mapMultiArgs["-addnode"].push_back("208.85.7.62");
+	mapMultiArgs["-addnode"].push_back("69.90.132.175");
     // ********************************************************* Step 2: parameter interactions
 
     fTestNet = GetBoolArg("-testnet");
